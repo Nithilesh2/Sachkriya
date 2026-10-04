@@ -25,8 +25,12 @@ const Header = () => {
     event.preventDefault()
 
     const section = document.getElementById(sectionId)
+
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" })
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
     }
   }
 
@@ -38,6 +42,11 @@ const Header = () => {
         "--color-green": COLORS.GREEN,
         "--color-black": COLORS.BLACK,
         "--color-dark": COLORS.DARK,
+
+        // Glass effect
+        background: "rgba(255, 255, 255, 0.38)",
+        backdropFilter: "blur(18px) saturate(1.35)",
+        WebkitBackdropFilter: "blur(18px) saturate(1.35)",
       }}
     >
       <div className={styles.left}>
@@ -47,7 +56,12 @@ const Header = () => {
           onClick={scrollToTop}
           aria-label="Scroll to top"
         >
-          <img src={logo} alt="logo" className={styles.logoImage} />
+          <img
+            src={logo}
+            alt="logo"
+            className={styles.logoImage}
+            draggable="false"
+          />
         </button>
       </div>
 
@@ -66,7 +80,10 @@ const Header = () => {
           </li>
 
           <li className={styles.headerDetailsText}>
-            <a href="#" onClick={(event) => scrollToSection(event, "ourServices")}>
+            <a
+              href="#"
+              onClick={(event) => scrollToSection(event, "ourServices")}
+            >
               Our Services
             </a>
           </li>
