@@ -1,0 +1,141 @@
+.servicesSection {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5.5rem 5.5rem 5rem;
+  background: #F7F6F3;
+  font-family: "Satoshi", sans-serif;
+  color: #1a1d1f;
+}
+.servicesSection::selection{
+  background-color: #b7df4c;
+}
+.headerRow {
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4e5752;
+  font-weight: 600;
+}
+
+.dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: #b7df4c;
+}
+
+.contentRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.title {
+  margin: 0;
+  max-width: 760px;
+  font-size: 49px;
+  line-height: 0.94;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  color: #1f2327;
+}
+
+.introText {
+  max-width: 540px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.35;
+  color: #4e5357;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(170px, 1fr));
+  gap: 2.25rem 1.5rem;
+  align-items: start;
+}
+
+.serviceCard {
+  text-align: left;
+}
+
+.iconWrap {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(161, 172, 155, 0.18);
+  border: 1px solid rgba(33, 36, 38, 0.09);
+  margin-bottom: 1.5rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.serviceIcon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+.serviceTitle {
+  margin: 0 0 0.8rem;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  color: #1f2327;
+}
+
+.serviceText {
+  margin: 0;
+  max-width: 240px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5d6467;
+}
+/* 
+@media (max-width: 1200px) {
+  .contentRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .servicesSection {
+    padding: 3.5rem 1.5rem 3rem;
+  }
+
+  .contentRow {
+    margin-bottom: 2.5rem;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.18rem;
+    font-size: 0.75rem;
+  }
+
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceText {
+    max-width: none;
+  }
+} */

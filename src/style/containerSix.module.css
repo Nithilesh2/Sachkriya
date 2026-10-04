@@ -1,0 +1,152 @@
+.bannerSection {
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem 3rem 0rem 0rem;
+  overflow: hidden;
+  font-family: "Satoshi", sans-serif;
+  position: relative;
+  background:
+    radial-gradient(
+      77% 95% at 100% 81%,
+      #bde958 0%,
+      rgba(189, 233, 88, 0) 100%
+    ),
+    radial-gradient(
+      65% 90% at -20% -25%,
+      #c3ea6a 0%,
+      rgba(195, 234, 106, 0) 100%
+    ),
+    linear-gradient(
+      90deg,
+      #eaf6c8 0%,
+      #fbfef4 40%,
+      #ffffff 58%,
+      #f1fadb 80%,
+      #d3ef8c 100%
+    );
+}
+.bannerSection::selection {
+  background-color: #b8d94a;
+}
+.visualWrap {
+  position: relative;
+  flex: 0 0 40%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visualWrap::before {
+  content: "";
+  position: absolute;
+  width: 68%;
+  height: 68%;
+  left: 18%;
+  top: 18%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0) 58%
+  );
+  border-radius: 50%;
+  filter: blur(18px);
+}
+
+.visual {
+  position: absolute;
+  bottom: 0;
+  width: min(100%, 760px);
+  height: auto;
+  object-fit: contain;
+  transform: translateX(-14px) scale(1.08);
+  filter: drop-shadow(0 30px 35px rgba(46, 63, 32, 0.12));
+}
+
+.contentWrap {
+  flex: 1 1 45%;
+  max-width: 720px;
+  padding-right: 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #1d1d1d;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #9acb41;
+}
+
+.title {
+  margin: 0 0 1.2rem;
+  font-size: 49px;
+  line-height: 0.96;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  color: #1a1d1f;
+}
+
+.description {
+  margin: 0 0 2rem;
+  max-width: 620px;
+  font-size: 20px;
+  line-height: 1.45;
+  color: rgb(0, 0, 0);
+}
+
+.ctaButton {
+  height: 52px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  border-radius: 999px;
+  background: #bfe75e;
+  color: #1a1d1f;
+  padding: 1.3rem 2.2rem;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .bannerSection {
+    flex-direction: column;
+    padding: 2rem 1.4rem 3rem;
+  }
+
+  .visualWrap {
+    width: 100%;
+    flex-basis: auto;
+    order: 2;
+    height: 300px;
+  }
+
+  .contentWrap {
+    width: 100%;
+    max-width: none;
+    order: 1;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+}

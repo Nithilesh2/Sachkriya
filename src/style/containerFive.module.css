@@ -1,0 +1,144 @@
+.processSection {
+  width: 100%;
+  margin: 0 auto;
+  padding: 4.5rem 5.5rem 5rem;
+  background: #f5f3f1;
+  font-family: "Satoshi", sans-serif;
+  color: #1c1d1f;
+}
+.processSection::selection{
+  background-color: #b8d94a;
+}
+.headerRow {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-weight: 500;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #b8d94a;
+}
+
+.contentRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  margin: 0;
+  max-width: 720px;
+  font-size: 49px;
+  line-height: 0.93;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  color: #1d1f22;
+}
+
+.introText {
+  margin: 0;
+  max-width: 520px;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #4f5256;
+}
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.stepItem {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.nodeWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.nodeNumber {
+  flex: none;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8ecdc;
+  color: #1d1f22;
+  font-size: 20px;
+  font-weight: 400;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.connector {
+  flex: 1 1 auto;
+  height: 0;
+  margin-left: 14px;
+  border-top: 2px dotted #dfe4d0;
+}
+
+.connectorDot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 18px;
+  border-radius: 50%;
+  background: #dfe4d0;
+}
+
+.stepContent {
+  max-width: 150px;
+}
+
+.stepContent h3 {
+  margin: 0 0 0.6rem;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #1e2023;
+}
+
+.stepContent p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+/* stack on small screens and hide the line */
+@media (max-width: 860px) {
+  .timeline {
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+  .stepItem {
+    flex: 1 1 40%;
+  }
+  .connector,
+  .connectorDot {
+    display: none;
+  }
+}

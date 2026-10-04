@@ -1,0 +1,130 @@
+* {
+  font-family: "Satoshi", sans-serif;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px) saturate(1.1);
+  -webkit-backdrop-filter: blur(8px) saturate(1.1);
+  border-bottom: 1px solid rgba(30, 32, 35, 0.06);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.header.scrolled {
+  top: 16px;
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(18px) saturate(1.35);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+.header::selection {
+  background-color: var(--color-green);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoButton {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.logoImage {
+  display: block;
+  width: auto;
+  height: 30px;
+  object-fit: contain;
+}
+
+.left,
+.right,
+.headerDetailsLeft,
+.headerDetailsRight,
+.squareDot {
+  position: relative;
+  z-index: 1;
+}
+
+.right {
+  height: auto;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.headerDetailsLeft {
+  height: auto;
+  width: auto;
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.headerDetailsText {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 0.35rem;
+  color: var(--color-black);
+  transition: color 0.2s ease;
+}
+
+.headerDetailsText::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-green);
+  transition: width 0.25s ease;
+}
+
+.headerDetailsText:hover {
+  color: var(--color-dark);
+}
+
+.headerDetailsText:hover::after {
+  width: 100%;
+}
+
+.headerDetailsRight {
+  background-color: var(--color-green);
+  border: none;
+  cursor: pointer;
+  height: 44px;
+  width: 154px;
+  border-radius: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.squareDot {
+  height: 8px;
+  width: 8px;
+  background-color: black;
+  border-radius: 0.2rem;
+}
