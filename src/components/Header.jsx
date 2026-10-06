@@ -5,6 +5,7 @@ import COLORS from "../colors"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,7 @@ const Header = () => {
 
   const scrollToSection = (event, sectionId) => {
     event.preventDefault()
+    setIsMenuOpen(false)
 
     const section = document.getElementById(sectionId)
 
@@ -35,51 +37,113 @@ const Header = () => {
   }
 
   return (
-    <div
+    <header
       className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
       style={{
         "--color-white": COLORS.WHITE,
         "--color-green": COLORS.GREEN,
         "--color-black": COLORS.BLACK,
         "--color-dark": COLORS.DARK,
-
-        // Glass effect
         background: "rgba(255, 255, 255, 0.38)",
         backdropFilter: "blur(18px) saturate(1.35)",
         WebkitBackdropFilter: "blur(18px) saturate(1.35)",
       }}
     >
-      <div className={styles.left}>
+      <div className={styles.headerInner}>
+        <div className={styles.left}>
+          <button
+            type="button"
+            className={styles.logoButton}
+            onClick={scrollToTop}
+            aria-label="Scroll to top"
+          >
+            <img
+              src={logo}
+              alt="logo"
+              className={styles.logoImage}
+              draggable="false"
+            />
+          </button>
+        </div>
+
+        <nav className={styles.right} aria-label="Main navigation">
+          <ul className={styles.headerDetailsLeft}>
+            <li className={styles.headerDetailsText}>
+              <a href="#" onClick={(event) => scrollToSection(event, "home")}>
+                Home
+              </a>
+            </li>
+
+            <li className={styles.headerDetailsText}>
+              <a href="#" onClick={(event) => scrollToSection(event, "about")}>
+                About
+              </a>
+            </li>
+
+            <li className={styles.headerDetailsText}>
+              <a
+                href="#"
+                onClick={(event) => scrollToSection(event, "ourServices")}
+              >
+                Our Services
+              </a>
+            </li>
+
+            <li className={styles.headerDetailsText}>
+              <a href="#" onClick={(event) => scrollToSection(event, "products")}>
+                Products
+              </a>
+            </li>
+
+            <li className={styles.headerDetailsText}>
+              <a href="#" onClick={(event) => scrollToSection(event, "global")}>
+                Global Reach
+              </a>
+            </li>
+
+            <li className={styles.headerDetailsText}>
+              <a href="#" onClick={(event) => scrollToSection(event, "contact")}>
+                Contact
+              </a>
+            </li>
+          </ul>
+
+          <button
+            type="button"
+            className={styles.headerDetailsRight}
+            onClick={(event) => scrollToSection(event, "contact")}
+          >
+            <div className={styles.squareDot} />
+            Contact Us
+          </button>
+        </nav>
+
         <button
           type="button"
-          className={styles.logoButton}
-          onClick={scrollToTop}
-          aria-label="Scroll to top"
+          className={`${styles.mobileMenuToggle} ${isMenuOpen ? styles.open : ""}`}
+          onClick={() => setIsMenuOpen((open) => !open)}
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
         >
-          <img
-            src={logo}
-            alt="logo"
-            className={styles.logoImage}
-            draggable="false"
-          />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
-      <div className={styles.right}>
-        <ul className={styles.headerDetailsLeft}>
-          <li className={styles.headerDetailsText}>
+      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}>
+        <ul className={styles.mobileMenuList}>
+          <li>
             <a href="#" onClick={(event) => scrollToSection(event, "home")}>
               Home
             </a>
           </li>
-
-          <li className={styles.headerDetailsText}>
+          <li>
             <a href="#" onClick={(event) => scrollToSection(event, "about")}>
               About
             </a>
           </li>
-
-          <li className={styles.headerDetailsText}>
+          <li>
             <a
               href="#"
               onClick={(event) => scrollToSection(event, "ourServices")}
@@ -87,36 +151,24 @@ const Header = () => {
               Our Services
             </a>
           </li>
-
-          <li className={styles.headerDetailsText}>
+          <li>
             <a href="#" onClick={(event) => scrollToSection(event, "products")}>
               Products
             </a>
           </li>
-
-          <li className={styles.headerDetailsText}>
+          <li>
             <a href="#" onClick={(event) => scrollToSection(event, "global")}>
               Global Reach
             </a>
           </li>
-
-          <li className={styles.headerDetailsText}>
+          <li>
             <a href="#" onClick={(event) => scrollToSection(event, "contact")}>
               Contact
             </a>
           </li>
         </ul>
-
-        <button
-          type="button"
-          className={styles.headerDetailsRight}
-          onClick={(event) => scrollToSection(event, "contact")}
-        >
-          <div className={styles.squareDot} />
-          Contact Us
-        </button>
       </div>
-    </div>
+    </header>
   )
 }
 

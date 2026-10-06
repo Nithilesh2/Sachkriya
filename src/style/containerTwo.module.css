@@ -10,6 +10,7 @@
   position: relative;
   justify-content: flex-end;
   gap: 5rem;
+  padding: 4.5rem 5.5rem 5rem;
 }
 .section::selection {
   background-color: #b7df4c;
@@ -17,8 +18,8 @@
 }
 .left{
   height: auto;
-  width: 80%;
-  margin-left: 5rem;
+  width: min(50%, 760px);
+  margin-left: 0;
 }
 .eyebrow{
   text-transform: uppercase;
@@ -61,7 +62,65 @@
   gap: 0.5rem;
   cursor:pointer;
 }
-.image{
+.right {
+  width: min(45%, 540px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+@media (max-width: 980px) {
+  .section {
+    flex-direction: column;
+    padding: 3rem 1.25rem 3rem;
+    gap: 2rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 1.5rem;
+  }
+
+  .header {
+    font-size: clamp(2.4rem, 7vw, 3.5rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .paraOne,
+  .paraTwo {
+    font-size: 1.05rem;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 2.5rem 1rem 2.5rem;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .button {
+    max-width: 100%;
+  }
 }

@@ -125,10 +125,17 @@
   cursor: pointer;
 }
 
+@media (max-width: 980px) {
+  .visual {
+    bottom: -8px;
+  }
+}
+
 @media (max-width: 900px) {
   .bannerSection {
     flex-direction: column;
     padding: 2rem 1.4rem 3rem;
+    height: auto;
   }
 
   .visualWrap {
@@ -138,15 +145,50 @@
     height: 300px;
   }
 
+  .visual {
+    bottom: -30px;
+    left: 0;
+    z-index: 1;
+  }
+
   .contentWrap {
     width: 100%;
     max-width: none;
     order: 1;
     padding-right: 0;
     text-align: left;
+    z-index: 2;
   }
 
   .title {
     max-width: 100%;
+    font-size: clamp(2.8rem, 8vw, 4rem);
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 500px) {
+  .bannerSection {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .visualWrap {
+    height: 240px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: clamp(2.2rem, 10vw, 3rem);
   }
 }

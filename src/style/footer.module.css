@@ -1,34 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 .footer {
   width: 100%;
-  height: 356px;
-  background: #0D1112;
+  background: #0d1112;
   color: #f2f2f2;
   font-family: "JetBrains Mono", monospace;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 4rem 2rem 2.5rem;
 }
-.footer::selection{
+
+.footer::selection {
   background-color: #b8d94a;
-  color: #0D1112;
+  color: #0d1112;
 }
-.inner{
-  width: 100%;
+
+.inner {
+  width: min(100%, 1500px);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
+
 .brandArea {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
+  width: clamp(90px, 11vw, 150px);
+  height: auto;
   object-fit: contain;
   transform: translateY(10px);
   user-select: none;
@@ -43,18 +45,18 @@
 
 .brandText h3 {
   margin: 0;
-  font-size: 100px;
-  line-height: 1.1;
-  letter-spacing: 1px;
+  font-size: clamp(3rem, 7vw, 6.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
   font-weight: 600;
   color: #f4f4f4;
 }
 
 .brandText p {
   margin: 0.5rem 0 0;
-  font-size: 22px;
+  font-size: clamp(0.7rem, 1.8vw, 1.4rem);
   line-height: 1.2;
-  letter-spacing: 20%;
+  letter-spacing: 0.12em;
   font-weight: 500;
   color: rgb(254, 254, 254);
   text-transform: uppercase;
@@ -64,20 +66,23 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 1rem;
   padding-top: 1rem;
-  color: #979797;
-  font-size: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #a7a7a7;
+  font-size: 0.95rem;
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .links a {
+  color: #f6f6f6;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -86,29 +91,58 @@
   opacity: 0.8;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 600px) {
   .footer {
-    padding: 2rem 1.25rem 1.5rem;
+    padding: 2.5rem 1.25rem 1.75rem;
   }
 
   .brandArea {
     align-items: flex-start;
+    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
   }
 
   .logo {
-    width: 82px;
+    width: 76px;
+  }
+
+  .brandText {
+    width: 100%;
+    align-items: center;
+  }
+
+  .brandText h3 {
+    font-size: clamp(2.1rem, 11vw, 4rem);
+  }
+
+  .brandText p {
+    letter-spacing: 0.08em;
   }
 
   .metaRow {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
+    align-items: center;
+    gap: 0.9rem;
   }
 
   .links {
-    gap: 1.2rem;
-    flex-wrap: wrap;
+    gap: 1rem 1.4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding-inline: 1rem;
+  }
+
+  .metaRow {
+    font-size: 0.82rem;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
