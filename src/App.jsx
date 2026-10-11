@@ -8,6 +8,7 @@ import ContainerFive from "./components/ContainerFive"
 import ContainerSix from "./components/ContainerSix"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import NotFound from "./components/NotFound"
 
 const App = () => {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -23,6 +24,10 @@ const App = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  if (window.location.pathname !== "/") {
+    return <NotFound />
   }
 
   return (
